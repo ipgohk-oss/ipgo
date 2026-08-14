@@ -192,19 +192,21 @@ a { color: inherit; text-decoration: none; }
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px;
   padding: clamp(36px, 5vw, 56px) 0;
 }
-.trust-item { display: grid; justify-items: center; gap: 12px; text-align: center; }
+.trust-item { display: grid; justify-items: center; gap: 16px; text-align: center; }
 .trust-icon {
-  width: 52px; height: 52px; border-radius: 50%;
+  width: clamp(76px, 7.5vw, 98px); height: clamp(76px, 7.5vw, 98px); border-radius: 50%;
   display: grid; place-items: center;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--accent);
+  box-shadow: inset 0 0 0 6px color-mix(in oklch, var(--accent) 7%, transparent);
 }
-.trust-icon svg { width: 22px; height: 22px; }
-.trust-label { font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; }
+.trust-icon svg { width: clamp(28px, 2.6vw, 36px); height: clamp(28px, 2.6vw, 36px); }
+.trust-label { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.45; }
 
 /* Why 卡片 */
 .cards-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 44px; }
+.cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -317,4 +319,87 @@ a { color: inherit; text-decoration: none; }
   .flow-steps { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .about-chips { grid-template-columns: 1fr; }
+}
+
+/* ---------- 正式站新增组件 ---------- */
+
+/* 当前页导航高亮 */
+.main-nav a.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+
+/* 子页页头 */
+.page-hero { padding: clamp(56px, 8vw, 104px) 0 clamp(32px, 4vw, 48px); }
+.page-hero .section-title { margin-bottom: 12px; }
+
+/* 首页服务入口：6 个按钮一排 */
+.svc-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.svc-btn {
+  display: grid; gap: 10px; justify-items: center; align-content: start;
+  text-align: center;
+  padding: 22px 12px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13.5px; font-weight: 600; color: var(--text); line-height: 1.5;
+  cursor: pointer; font-family: var(--font-body);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.svc-btn svg { width: 24px; height: 24px; color: var(--accent); }
+.svc-btn:hover { transform: translateY(-3px); border-color: color-mix(in oklch, var(--accent) 55%, var(--border)); box-shadow: var(--shadow); }
+
+/* 首页服务入口：3 个大按钮各占一行 */
+.svc-wide { display: grid; gap: 14px; margin-top: 14px; }
+.svc-wide-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: clamp(22px, 3vw, 30px) clamp(22px, 3.4vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.svc-wide-btn:hover { transform: translateX(4px); border-color: color-mix(in oklch, var(--accent) 55%, var(--border)); box-shadow: var(--shadow); }
+.svc-wide-btn .sw-title { font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 700; }
+.svc-wide-btn .sw-sub { font-size: 13px; color: var(--text-secondary); font-weight: 400; margin-top: 4px; }
+.svc-wide-btn .sw-arrow { color: var(--accent); font-size: 22px; flex: none; font-family: var(--font-mono); }
+
+/* 能力页：服务详情块 */
+.svc-detail { display: grid; grid-template-columns: 64px 1fr; gap: 22px; padding: clamp(26px, 3.4vw, 40px) 0; border-top: 1px solid var(--border-light); }
+.svc-detail:first-of-type { border-top: 0; }
+.svc-detail-num { font-family: var(--font-mono); font-size: 15px; color: var(--accent); letter-spacing: .1em; padding-top: 5px; }
+.svc-detail h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 700; margin-bottom: 10px; }
+.svc-detail p { color: var(--text-secondary); max-width: 68ch; margin-bottom: 16px; }
+.svc-points { display: flex; flex-wrap: wrap; gap: 10px; }
+.svc-point { font-size: 12.5px; color: var(--text-secondary); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 6px 14px; background: var(--surface); }
+
+/* 合作页：合作方网格 */
+.partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 40px; }
+.partner-cell {
+  display: grid; place-items: center; text-align: center;
+  min-height: 96px; padding: 18px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  font-weight: 600; font-size: 15px;
+}
+.partner-cell small { display: block; font-weight: 400; font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+/* 合作模式卡片沿用 .card */
+
+/* 关于页：时间轴 */
+.timeline { margin-top: 44px; display: grid; gap: 0; }
+.tl-item { display: grid; grid-template-columns: 96px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--border-light); }
+.tl-item:first-child { border-top: 0; }
+.tl-year { font-family: var(--font-mono); color: var(--accent); font-size: 15px; letter-spacing: .08em; padding-top: 3px; }
+.tl-item h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 6px; }
+.tl-item p { font-size: 13.5px; color: var(--text-secondary); max-width: 64ch; }
+
+/* 返回顶部小字链接 */
+.more-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 26px; }
+.more-link:hover { text-decoration: underline; }
+
+@media (max-width: 960px) {
+  .svc-grid { grid-template-columns: repeat(3, 1fr); }
+  .svc-detail { grid-template-columns: 44px 1fr; }
+}
+@media (max-width: 560px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .tl-item { grid-template-columns: 72px 1fr; }
 }

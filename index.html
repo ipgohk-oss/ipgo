@@ -1,93 +1,260 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IPGO 网站改版 · 方案预览中心</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: oklch(0.17 0.01 250); color: oklch(0.93 0.01 250);
-    min-height: 100vh; display: grid; place-items: center;
-    padding: 48px 20px; line-height: 1.7;
-  }
-  main { width: min(980px, 100%); }
-  h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 8px; }
-  .sub { color: oklch(0.7 0.02 250); font-size: 14px; margin-bottom: 40px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
-  a.plan {
-    display: block; border: 1px solid oklch(0.32 0.02 250); border-radius: 16px;
-    padding: 28px; color: inherit; text-decoration: none;
-    background: oklch(0.21 0.015 250);
-    transition: transform .2s ease, border-color .2s ease;
-  }
-  a.plan:hover { transform: translateY(-4px); border-color: oklch(0.6 0.1 250); }
-  .tag { font-family: ui-monospace, Consolas, monospace; font-size: 11px; letter-spacing: .14em; color: oklch(0.65 0.03 250); text-transform: uppercase; }
-  .name { font-size: 22px; font-weight: 700; margin: 10px 0 6px; }
-  .desc { font-size: 13.5px; color: oklch(0.72 0.02 250); }
-  .meta { margin-top: 16px; font-size: 12px; color: oklch(0.6 0.02 250); font-family: ui-monospace, Consolas, monospace; }
-  .swatches { display: flex; gap: 6px; margin-top: 14px; }
-  .swatches i { width: 22px; height: 22px; border-radius: 6px; display: block; border: 1px solid rgba(255,255,255,.12); }
-  .tips { margin-top: 36px; font-size: 13px; color: oklch(0.6 0.02 250); border-top: 1px solid oklch(0.3 0.02 250); padding-top: 20px; }
-</style>
+<title>IPGO 原创资产信任框架 · 全球原创资产信任验证平台</title>
+<script>(function(){try{var t=localStorage.getItem('theme')||document.documentElement.getAttribute('data-default-theme')||'system';if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/scheme.css">
 </head>
 <body>
-<main>
-  <h1>IPGO 网站改版 · 7 个方案</h1>
-  <p class="sub">每个方案都支持「简 | EN」语言切换（页面右上角）和「深色 / 跟随系统 / 浅色」主题切换（页面左下角）。验证按钮可点击，展示假数据效果。</p>
-  <div class="grid">
-    <a class="plan" href="plan-a.html">
-      <span class="tag">Scheme A</span>
-      <div class="name">蔚蓝基建</div>
-      <p class="desc">科技蓝 + 大面积留白，蓝图网格背景，工程师气质，最接近"现代科技感"的稳妥选择。</p>
-      <div class="swatches"><i style="background:#f4f7fd"></i><i style="background:#1c2440"></i><i style="background:#2f6bed"></i></div>
-      <p class="meta">默认浅色 · plan-a.html</p>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M5 27V16a11 11 0 0 1 22 0v11"/>
+        <path d="M9.5 27V16a6.5 6.5 0 0 1 13 0v11"/>
+        <path d="M14 27v-9a2 2 0 0 1 4 0v9"/>
+      </svg>
+      <span><span class="brand-name">IPGO</span><span class="brand-sub">Original Asset Trust</span></span>
     </a>
-    <a class="plan" href="plan-b.html">
-      <span class="tag">Scheme B</span>
-      <div class="name">墨玉</div>
-      <p class="desc">深墨绿底 + 翡翠光泽，大圆角，沉稳商务感，默认深色打开，气场最强。</p>
-      <div class="swatches"><i style="background:#1d3331"></i><i style="background:#eef6f3"></i><i style="background:#4fd6b4"></i></div>
-      <p class="meta">默认深色 · plan-b.html</p>
-    </a>
-    <a class="plan" href="plan-c.html">
-      <span class="tag">Scheme C</span>
-      <div class="name">石墨信号</div>
-      <p class="desc">黑白灰极简 + 信号橙点缀，硬朗直角、粗线条，工业感与秩序感，最"反模板"。</p>
-      <div class="swatches"><i style="background:#f7f7f5"></i><i style="background:#1b1b1a"></i><i style="background:#f06423"></i></div>
-      <p class="meta">默认浅色 · plan-c.html</p>
-    </a>
-    <a class="plan" href="plan-d.html">
-      <span class="tag">Scheme D</span>
-      <div class="name">暖纸</div>
-      <p class="desc">米白暖底 + 赭橙点缀（与你主站 laojia-ip.com 同色系），柔和无边框卡片，阅读最舒服。</p>
-      <div class="swatches"><i style="background:#f5f3f0"></i><i style="background:#1a1714"></i><i style="background:#c45c26"></i></div>
-      <p class="meta">默认浅色 · plan-d.html</p>
-    </a>
-    <a class="plan" href="plan-e1.html" style="border-color: oklch(0.45 0.19 264 / .6)">
-      <span class="tag">Scheme E1 · New</span>
-      <div class="name">克莱因蓝 · 穿插</div>
-      <p class="desc">白底超大字 + 深色段落穿插，苹果产品页的节奏感，克莱因蓝点缀，科技感和国际化最强。</p>
-      <div class="swatches"><i style="background:#fafbfe"></i><i style="background:#12142b"></i><i style="background:#002fa7"></i></div>
-      <p class="meta">默认浅色（深色带穿插） · plan-e1.html</p>
-    </a>
-    <a class="plan" href="plan-e2.html">
-      <span class="tag">Scheme E2 · New</span>
-      <div class="name">克莱因蓝 · 纯浅</div>
-      <p class="desc">全站白底浅色，超大标题字 + 极大留白，最干净、最接近苹果官网首页气质。</p>
-      <div class="swatches"><i style="background:#fafbfe"></i><i style="background:#eef0f8"></i><i style="background:#002fa7"></i></div>
-      <p class="meta">默认浅色 · plan-e2.html</p>
-    </a>
-    <a class="plan" href="plan-e3.html">
-      <span class="tag">Scheme E3 · New</span>
-      <div class="name">克莱因蓝 · 深色</div>
-      <p class="desc">近黑底 + 克莱因蓝高亮，默认深色打开，像苹果发布会页面，冲击力最强。</p>
-      <div class="swatches"><i style="background:#12142b"></i><i style="background:#1d2038"></i><i style="background:#4d6fff"></i></div>
-      <p class="meta">默认深色 · plan-e3.html</p>
-    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active" data-i18n="nav.home">首页</a>
+      <a href="capabilities.html" data-i18n="nav.cap">能力</a>
+      <a href="partnership.html" data-i18n="nav.partner">合作</a>
+      <a href="about.html" data-i18n="nav.about">关于</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="zh">简</button><span>|</span>
+        <button class="lang-btn" data-lang="tw">繁</button><span>|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary" href="mailto:ipgohk@gmail.com" data-i18n="header.cta">联系我们</a>
+    </div>
   </div>
-  <p class="tips">提示：页面里的文字内容均为占位假数据，仅用于评估视觉效果。挑中方案后再替换成正式文案。</p>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="verify">
+    <div class="container">
+      <div class="rv">
+        <span class="badge" data-i18n="hero.badge">为数字时代的原创资产建立全球信任体系</span>
+        <h1 data-i18n="hero.title">IPGO 原创资产信任框架</h1>
+        <p class="hero-sub" data-i18n="hero.sub">全球原创资产信任验证平台</p>
+        <p class="hero-desc" data-i18n="hero.desc">IPGO 旨在解决一个根本问题：在数字时代，原创性无法被默认信任，也缺乏全球统一的验证标准。</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg><span data-i18n="hero.chip1">Polygon 网络</span></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-i18n="hero.chip2">SHA-256 安全加密</span></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg><span data-i18n="hero.chip3">全球可验证</span></span>
+        </div>
+      </div>
+
+      <div class="verify-card rv">
+        <div class="verify-card-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="card-kicker" data-i18n="card.kicker">验证中心</span>
+        </div>
+        <h3 data-i18n="card.title">证书 / 报告验证</h3>
+        <form id="verifyForm">
+          <label class="field-label" for="certNo" data-i18n="card.label">证书编号</label>
+          <input class="field-input" id="certNo" type="text" data-i18n-ph="card.ph" placeholder="请输入证书编号，如 IPGO-2026-880123">
+          <button class="btn btn-primary verify-btn" type="submit"><span data-i18n="card.btn">验证</span> →</button>
+        </form>
+        <div class="verify-result" id="verifyResult">
+          <div class="verify-result-inner">
+            <div class="result-box">
+              <div class="result-ok">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+                <span data-i18n="result.ok">验证通过</span>
+              </div>
+              <dl>
+                <dt data-i18n="result.no">证书编号</dt>
+                <dd>IPGO-2026-880123</dd>
+                <dd data-i18n="result.work">《星轨旅人》插画作品</dd>
+                <dd data-i18n="result.chain">已锚定 Polygon 区块 #78,452,190 · 2026-08-01 14:22</dd>
+                <dd data-i18n="result.hash">SHA-256 完整性校验一致</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="mini-features">
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg>
+            <span data-i18n="card.f1">区块链验证系统</span>
+          </div>
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5" opacity=".45"/></svg>
+            <span data-i18n="card.f2">六层信任框架</span>
+          </div>
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+            <span data-i18n="card.f3">防篡改记录</span>
+          </div>
+        </div>
+        <p class="card-note" data-i18n="card.note">验证结果依据 IPGO 原创资产信任框架签发，在身份、完整性与区块链各层提供可公开追溯的信任记录。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <p class="kicker rv" data-i18n="svc.kicker">服务入口</p>
+      <h2 class="section-title rv" data-i18n="svc.title">一站式版权服务</h2>
+      <div class="svc-grid rv" style="margin-top:36px">
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/></svg>
+          <span data-i18n="svc.1">原创作品数字备案</span>
+        </a>
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>
+          <span data-i18n="svc.2">产品设计发布存证</span>
+        </a>
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9V3"/></svg>
+          <span data-i18n="svc.3">版权独创性测试</span>
+        </a>
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l6-6"/></svg>
+          <span data-i18n="svc.4">版权风险监测</span>
+        </a>
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 20v-6a5 5 0 0 1 10 0v6"/><path d="M10 20v-5a2 2 0 0 1 4 0v5"/><path d="M4 11a9 9 0 0 1 16 0"/></svg>
+          <span data-i18n="svc.5">自助取证/固证</span>
+        </a>
+        <a class="svc-btn" href="javascript:void(0)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M9.5 9.5V20"/></svg>
+          <span data-i18n="svc.6">知识产权管理</span>
+        </a>
+      </div>
+      <div class="svc-wide rv">
+        <a class="svc-wide-btn" href="javascript:void(0)">
+          <span><span class="sw-title" data-i18n="svc.w1t">授权交易</span><span class="sw-sub" style="display:block" data-i18n="svc.w1s">版权授权、交易撮合、合同存证一站式服务</span></span>
+          <span class="sw-arrow">→</span>
+        </a>
+        <a class="svc-wide-btn" href="javascript:void(0)">
+          <span><span class="sw-title" data-i18n="svc.w2t">教育培训</span><span class="sw-sub" style="display:block" data-i18n="svc.w2s">版权课程、企业内训与专业人才认证</span></span>
+          <span class="sw-arrow">→</span>
+        </a>
+        <a class="svc-wide-btn" href="javascript:void(0)">
+          <span><span class="sw-title" data-i18n="svc.w3t">全球资讯</span><span class="sw-sub" style="display:block" data-i18n="svc.w3s">全球版权行业动态与政策解读</span></span>
+          <span class="sw-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-5.5 8-5.5s6.5 1.5 8 5.5"/></svg></div><span class="trust-label" data-i18n="trust.1">身份信任</span></div>
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/></svg></div><span class="trust-label" data-i18n="trust.2">提交信任</span></div>
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 20v-6a5 5 0 0 1 10 0v6"/><path d="M10 20v-5a2 2 0 0 1 4 0v5"/><path d="M4 11a9 9 0 0 1 16 0"/></svg></div><span class="trust-label" data-i18n="trust.3">完整性信任</span></div>
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><span class="trust-label" data-i18n="trust.4">时间不可篡改信任</span></div>
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg></div><span class="trust-label" data-i18n="trust.5">区块链记录信任</span></div>
+        <div class="trust-item rv"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div><span class="trust-label" data-i18n="trust.6">公开验证信任</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container">
+      <p class="kicker rv" data-i18n="why.kicker">信任基础设施</p>
+      <h2 class="section-title rv" data-i18n="why.title">为什么选择 IPGO</h2>
+      <div class="cards-4">
+        <div class="card rv">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg></div>
+          <h3 data-i18n="why.1t">区块链认证</h3>
+          <p data-i18n="why.1d">不可篡改的链上记录，快速确认，全球可追溯。</p>
+        </div>
+        <div class="card rv">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div>
+          <h3 data-i18n="why.2t">全球验证</h3>
+          <p data-i18n="why.2d">随时随地进行跨境证书与报告验证。</p>
+        </div>
+        <div class="card rv">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5" opacity=".45"/></svg></div>
+          <h3 data-i18n="why.3t">信任基础设施</h3>
+          <p data-i18n="why.3d">从创作、存证到维权的端到端信任链。</p>
+        </div>
+        <div class="card rv">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-i18n="why.4t">企业级安全</h3>
+          <p data-i18n="why.4d">多层加密与合规就绪的审计轨迹。</p>
+        </div>
+      </div>
+      <a class="more-link rv" href="capabilities.html" data-i18n="idx.more">查看全部能力 →</a>
+    </div>
+  </section>
+
+  <section class="section section-alt chain-band">
+    <div class="container">
+      <div class="rv">
+        <p class="kicker" data-i18n="chain.kicker">区块链基础设施</p>
+        <p class="section-desc" data-i18n="chain.desc">IPGO 采用 Polygon 区块链，以快速、低成本且环境友好的方式，在全球范围内提供版权验证服务。</p>
+      </div>
+      <div class="stats rv">
+        <div><div class="stat-num">~2s</div><div class="stat-label" data-i18n="chain.s1">区块确认</div></div>
+        <div><div class="stat-num">99.9%</div><div class="stat-label" data-i18n="chain.s2">网络正常运行时间</div></div>
+        <div><div class="stat-num">∞</div><div class="stat-label" data-i18n="chain.s3">不可篡改记录</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="flow">
+    <div class="container">
+      <p class="kicker rv" data-i18n="flow.kicker">运作方式</p>
+      <h2 class="section-title rv" data-i18n="flow.title">验证流程</h2>
+      <p class="section-desc rv" data-i18n="flow.desc">从作品登记到全球验证，IPGO 以 SHA-256 完整性校验与 Polygon 区块链锚定，提供透明且可追溯的全流程服务。</p>
+      <div class="flow-steps">
+        <div class="flow-step rv"><h3 data-i18n="flow.1">作品登记</h3></div>
+        <div class="flow-step rv"><h3 data-i18n="flow.2">SHA-256 哈希生成</h3></div>
+        <div class="flow-step rv"><h3 data-i18n="flow.3">区块链锚定</h3></div>
+        <div class="flow-step rv"><h3 data-i18n="flow.4">证书签发</h3></div>
+        <div class="flow-step rv"><h3 data-i18n="flow.5">全球验证</h3></div>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M5 27V16a11 11 0 0 1 22 0v11"/>
+            <path d="M9.5 27V16a6.5 6.5 0 0 1 13 0v11"/>
+            <path d="M14 27v-9a2 2 0 0 1 4 0v9"/>
+          </svg>
+          <span class="brand-name">IPGO</span>
+        </div>
+        <p class="footer-tag" data-i18n="footer.tag">全球版权存证与验证平台。以区块链驱动的知识产权保护，服务全球创作者与企业。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-h" data-i18n="footer.nav">网站导航</p>
+        <a href="index.html" data-i18n="nav.home">首页</a>
+        <a href="capabilities.html" data-i18n="nav.cap">能力</a>
+        <a href="partnership.html" data-i18n="nav.partner">合作</a>
+        <a href="about.html" data-i18n="nav.about">关于</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-h" data-i18n="footer.contact">联系方式</p>
+        <p data-i18n="footer.loc">香港特别行政区</p>
+        <a href="mailto:ipgohk@gmail.com">ipgohk@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">2026 © IPGO Limited（香港）</span>
+      <span data-i18n="footer.chain">区块链信任 Powered by Polygon Network · 企业级区块链基础设施</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/shared.js"></script>
 </body>
 </html>
