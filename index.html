@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPGO 网站改版 · 方案预览中心</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: oklch(0.17 0.01 250); color: oklch(0.93 0.01 250);
+    min-height: 100vh; display: grid; place-items: center;
+    padding: 48px 20px; line-height: 1.7;
+  }
+  main { width: min(980px, 100%); }
+  h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 8px; }
+  .sub { color: oklch(0.7 0.02 250); font-size: 14px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  a.plan {
+    display: block; border: 1px solid oklch(0.32 0.02 250); border-radius: 16px;
+    padding: 28px; color: inherit; text-decoration: none;
+    background: oklch(0.21 0.015 250);
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  a.plan:hover { transform: translateY(-4px); border-color: oklch(0.6 0.1 250); }
+  .tag { font-family: ui-monospace, Consolas, monospace; font-size: 11px; letter-spacing: .14em; color: oklch(0.65 0.03 250); text-transform: uppercase; }
+  .name { font-size: 22px; font-weight: 700; margin: 10px 0 6px; }
+  .desc { font-size: 13.5px; color: oklch(0.72 0.02 250); }
+  .meta { margin-top: 16px; font-size: 12px; color: oklch(0.6 0.02 250); font-family: ui-monospace, Consolas, monospace; }
+  .swatches { display: flex; gap: 6px; margin-top: 14px; }
+  .swatches i { width: 22px; height: 22px; border-radius: 6px; display: block; border: 1px solid rgba(255,255,255,.12); }
+  .tips { margin-top: 36px; font-size: 13px; color: oklch(0.6 0.02 250); border-top: 1px solid oklch(0.3 0.02 250); padding-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>IPGO 网站改版 · 4 个方案</h1>
+  <p class="sub">每个方案都支持「简 | EN」语言切换（页面右上角）和「深色 / 跟随系统 / 浅色」主题切换（页面左下角）。验证按钮可点击，展示假数据效果。</p>
+  <div class="grid">
+    <a class="plan" href="plan-a.html">
+      <span class="tag">Scheme A</span>
+      <div class="name">蔚蓝基建</div>
+      <p class="desc">科技蓝 + 大面积留白，蓝图网格背景，工程师气质，最接近"现代科技感"的稳妥选择。</p>
+      <div class="swatches"><i style="background:#f4f7fd"></i><i style="background:#1c2440"></i><i style="background:#2f6bed"></i></div>
+      <p class="meta">默认浅色 · plan-a.html</p>
+    </a>
+    <a class="plan" href="plan-b.html">
+      <span class="tag">Scheme B</span>
+      <div class="name">墨玉</div>
+      <p class="desc">深墨绿底 + 翡翠光泽，大圆角，沉稳商务感，默认深色打开，气场最强。</p>
+      <div class="swatches"><i style="background:#1d3331"></i><i style="background:#eef6f3"></i><i style="background:#4fd6b4"></i></div>
+      <p class="meta">默认深色 · plan-b.html</p>
+    </a>
+    <a class="plan" href="plan-c.html">
+      <span class="tag">Scheme C</span>
+      <div class="name">石墨信号</div>
+      <p class="desc">黑白灰极简 + 信号橙点缀，硬朗直角、粗线条，工业感与秩序感，最"反模板"。</p>
+      <div class="swatches"><i style="background:#f7f7f5"></i><i style="background:#1b1b1a"></i><i style="background:#f06423"></i></div>
+      <p class="meta">默认浅色 · plan-c.html</p>
+    </a>
+    <a class="plan" href="plan-d.html">
+      <span class="tag">Scheme D</span>
+      <div class="name">暖纸</div>
+      <p class="desc">米白暖底 + 赭橙点缀（与你主站 laojia-ip.com 同色系），柔和无边框卡片，阅读最舒服。</p>
+      <div class="swatches"><i style="background:#f5f3f0"></i><i style="background:#1a1714"></i><i style="background:#c45c26"></i></div>
+      <p class="meta">默认浅色 · plan-d.html</p>
+    </a>
+  </div>
+  <p class="tips">提示：页面里的文字内容均为占位假数据，仅用于评估视觉效果。挑中方案后再替换成正式文案。</p>
+</main>
+</body>
+</html>
