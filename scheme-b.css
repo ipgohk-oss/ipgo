@@ -1,0 +1,79 @@
+/* 方案B · 墨玉 —— 深墨绿 + 翡翠点缀，深色优先，商务大气 */
+:root {
+  --font-display: "Candara", "Avenir Next", "Segoe UI", system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  --radius: 20px; --radius-sm: 12px; --radius-pill: 999px;
+  --ls-display: 0.01em;
+
+  --bg: oklch(0.205 0.026 178);
+  --bg-2: oklch(0.178 0.022 178);
+  --surface: oklch(0.25 0.03 176);
+  --surface-hover: oklch(0.285 0.032 176);
+  --text: oklch(0.945 0.014 168);
+  --text-secondary: oklch(0.77 0.026 170);
+  --text-muted: oklch(0.615 0.02 170);
+  --accent: oklch(0.76 0.115 166);
+  --accent-strong: oklch(0.84 0.1 163);
+  --accent-contrast: oklch(0.16 0.025 178);
+  --border: oklch(0.34 0.03 176);
+  --border-light: oklch(0.29 0.026 176);
+  --shadow: 0 22px 48px -20px rgba(0,0,0,.55);
+  --shadow-btn: 0 10px 24px -10px oklch(0.76 0.115 166 / .45);
+  --ok: oklch(0.74 0.13 152);
+
+  /* 翡翠微光 */
+  --hero-bg:
+    radial-gradient(52% 42% at 78% 30%, oklch(0.76 0.115 166 / .1), transparent 70%),
+    radial-gradient(38% 34% at 12% 78%, oklch(0.76 0.115 166 / .06), transparent 70%),
+    var(--bg);
+}
+
+[data-theme="light"] {
+  --bg: oklch(0.978 0.007 168);
+  --bg-2: oklch(0.952 0.011 170);
+  --surface: oklch(0.995 0.003 168);
+  --surface-hover: oklch(0.965 0.009 170);
+  --text: oklch(0.24 0.032 182);
+  --text-secondary: oklch(0.41 0.026 176);
+  --text-muted: oklch(0.55 0.02 172);
+  --accent: oklch(0.5 0.11 176);
+  --accent-strong: oklch(0.42 0.11 178);
+  --accent-contrast: oklch(0.985 0.004 168);
+  --border: oklch(0.875 0.016 172);
+  --border-light: oklch(0.92 0.011 172);
+  --shadow: 0 20px 44px -20px oklch(0.32 0.05 178 / .16);
+  --shadow-btn: 0 10px 24px -10px oklch(0.5 0.11 176 / .45);
+  --ok: oklch(0.56 0.12 152);
+  --hero-bg:
+    radial-gradient(52% 42% at 78% 30%, oklch(0.5 0.11 176 / .07), transparent 70%),
+    radial-gradient(38% 34% at 12% 78%, oklch(0.5 0.11 176 / .045), transparent 70%),
+    var(--bg);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: oklch(0.978 0.007 168);
+    --bg-2: oklch(0.952 0.011 170);
+    --surface: oklch(0.995 0.003 168);
+    --surface-hover: oklch(0.965 0.009 170);
+    --text: oklch(0.24 0.032 182);
+    --text-secondary: oklch(0.41 0.026 176);
+    --text-muted: oklch(0.55 0.02 172);
+    --accent: oklch(0.5 0.11 176);
+    --accent-strong: oklch(0.42 0.11 178);
+    --accent-contrast: oklch(0.985 0.004 168);
+    --border: oklch(0.875 0.016 172);
+    --border-light: oklch(0.92 0.011 172);
+    --shadow: 0 20px 44px -20px oklch(0.32 0.05 178 / .16);
+    --shadow-btn: 0 10px 24px -10px oklch(0.5 0.11 176 / .45);
+    --ok: oklch(0.56 0.12 152);
+    --hero-bg:
+      radial-gradient(52% 42% at 78% 30%, oklch(0.5 0.11 176 / .07), transparent 70%),
+      radial-gradient(38% 34% at 12% 78%, oklch(0.5 0.11 176 / .045), transparent 70%),
+      var(--bg);
+  }
+}
+
+.verify-card { border-top: 2px solid color-mix(in oklch, var(--accent) 60%, transparent); }
+.trust-icon { box-shadow: 0 0 0 5px color-mix(in oklch, var(--accent) 7%, transparent); }
